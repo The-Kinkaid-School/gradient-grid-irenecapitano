@@ -112,6 +112,7 @@ public class GradientGridPanel extends JPanel
                 break;
             case 4:
                 // TODO write code for case 3, either here or in its own method.
+                zigzagModel();
                 break;
             // you may add more cases, if you wish!
         }
@@ -134,7 +135,7 @@ public class GradientGridPanel extends JPanel
     }
 
     /**
-     * an example that i wrote
+     * this model is in the shape of a spiral
      */
 
     private void spiralModel(){
@@ -155,6 +156,13 @@ public class GradientGridPanel extends JPanel
             for (int i = bottom; i >= top; i--) myGrid[i][left] = num++; //to determine the bottom number for j
             left++;
         }
+    }
+
+    /*
+    this model is in zig zags
+     */
+    private void zigzagModel(){
+
     }
 
     /**
