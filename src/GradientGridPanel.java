@@ -86,6 +86,8 @@ public class GradientGridPanel extends JPanel
 
         //this method should be a loop to check for duplicates and adjacency
 
+        //no longer required for this project
+
 
         return false;
     }
@@ -162,7 +164,21 @@ public class GradientGridPanel extends JPanel
     this model is in zig zags
      */
     private void zigzagModel(){
+        int num = 0;
+        for (int i = 0; i < myGrid.length; i++){
+            if (i % 2 == 0){ //this notates that when the number is even have this happen
+                for (int j = 0; j < myGrid[i].length; j++){
+                    myGrid[i][j] = num++;
+                    //add the numbers into the grid
+                }
+            }
 
+            else { //for the opposite that is odd
+                for (int j = myGrid[i].length - 1; j >= 0; j--){
+                    myGrid[i][j] = num++;
+                }
+            }
+        }
     }
 
     /**
