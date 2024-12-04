@@ -83,6 +83,10 @@ public class GradientGridPanel extends JPanel
         boolean[] used = new boolean[GRID_SIZE * GRID_SIZE];
 
         //TODO: you write this method.
+
+        //this method should be a loop to check for duplicates and adjacency
+
+
         return false;
     }
 
@@ -104,7 +108,7 @@ public class GradientGridPanel extends JPanel
                 makeAnotherBadExample();
                 break;
             case 3:
-                // TODO write code for case 2, either here or in its own method.
+                spiralModel();
                 break;
             case 4:
                 // TODO write code for case 3, either here or in its own method.
@@ -126,6 +130,30 @@ public class GradientGridPanel extends JPanel
                 myGrid[r][c] = counter;
                 counter++;
             }
+        }
+    }
+
+    /**
+     * an example that i wrote
+     */
+
+    private void spiralModel(){
+        //establishing some numbers
+        int num = 0;
+        int left = 0, right = 15, top = 0, bottom = 15;
+
+        //to organize them into a spiral order
+        while (left <= right && top <= bottom) {
+            for (int j = left; j <= right; j++) myGrid[top][j] = num++; top++; //to determine the left number for j
+
+            for (int i = top; i <= bottom; i++) myGrid[i][right] = num++; //to determine the top number for j
+            right--;
+
+            for (int j = right; j >= left; j--) myGrid[bottom][j] = num++; //to determine the right number for j
+            bottom--;
+
+            for (int i = bottom; i >= top; i--) myGrid[i][left] = num++; //to determine the bottom number for j
+            left++;
         }
     }
 
